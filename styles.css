@@ -99,3 +99,14 @@ align-items:center;
 .button{
 	color: red;
 }
+
+body{
+	background-color: #FFE4C4;
+}
+
+.box5{
+    position: fixed;
+    width: auto;
+    background-color: #b0bec5;
+    border-radius: 10px;
+}
