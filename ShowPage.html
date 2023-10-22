@@ -21,6 +21,7 @@
 		console.log(nameOfShow.duration);
 
 		const songs=["This Song", "Another Song", "qwerty song", "asdfghjkl song", "zusdgs song"];
+		var originalSong="This Song";
 		songs.forEach((value)=>{
 				console.log(value);	
 			}
@@ -62,6 +63,13 @@
 		{
 			console.log("The name of the show has been modified in this session!");
 		}
+		
+		nameOfShow.startDate="1/9/23";
+		console.log("The start date is: " + nameOfShow.startDate);
+
+		var pageNumber=2;
+		console.log("The page number is: " + pageNumber);
+		console.log("The original song the user provided is: " + originalSong);
 	</script>
 	
     <div class="box"><div class="rectangle"></div></div>
