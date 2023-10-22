@@ -9,12 +9,59 @@
 
 	<script>
 
-		let nameOfDJ={
+		let nameOfShow={
 			name: "First Person",
 			showName: "Some Show",
 			startTime: "1:55 PM",
 			duration: "2 hours, 15 minutes"
 			};
+		console.log(nameOfShow.name);
+		console.log(nameOfShow.showName);
+		console.log(nameOfShow.startTime);
+		console.log(nameOfShow.duration);
+
+		const songs=["This Song", "Another Song", "qwerty song", "asdfghjkl song", "zusdgs song"];
+		songs.forEach((value)=>{
+				console.log(value);	
+			}
+		);
+
+		if(songs[0]=="This Song")
+		{
+			console.log("the first song is valid");
+		}
+
+		nameOfShow.name="Second";
+
+		if(nameOfShow.name=="First Person")
+		{
+			console.log("The name of the dj is First Person");
+		}
+
+		else if(nameOfShow.name="Second")
+		{
+			console.log("The name of the dj is Second");		
+		}
+
+		else
+		{
+			console.log("The dj does not have a known name");
+		}
+
+		if(nameOfShow.startTime=="1:00 AM")
+		{
+			console.log("The start time of the show is 1 in the morning");
+		}
+
+		else
+		{
+			console.log("The user provided a start time that is not 1:00 AM");
+		}
+
+		if(nameOfShow.duration=="2 hours, 15 minutes" && nameOfShow.name!="First Person")
+		{
+			console.log("The name of the show has been modified in this session!");
+		}
 	</script>
 	
     <div class="box"><div class="rectangle"></div></div>
@@ -46,5 +93,14 @@
 	<br><br><br><br><br><br>
        <div class="box8"><img class="rectangle" src="img/music.jpeg" alt="music logo" width="250" height="200"/></div>
 
+	<div id="upcoming songs">
+	<p><h2> Other upcoming songs</h2></p>
+	<ul>
+		<li>This Song</li>
+		<li>Another Song</li>
+		<li>qwerty song</li>
+		<li>asdfghjkl song</li>
+		<li>zusdgs song</li>
+	</ul>
 </body>
 </html>
