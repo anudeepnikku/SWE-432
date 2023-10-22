@@ -18,8 +18,10 @@
       <div class="box3"><img class="ellipse" src="img/ellipse.png"/></div>
       <div class="box4"><div class="rectangle"></div></div>
 
-    <figure>
-      <div class="mainLeftCorner"><img class="mainLeftCorner" src="img/blank_profile.png"/></div>
+      <figure style="margin:0px"> <!--ADDED STYLE margin-->
+      <div class="mainLeftCorner">
+	      <img class="mainLeftCorner" src="img/blank_profile.png"/>
+      </div>
        <figcaption>Name of DJ</figcaption> 
      </figure> 
     
@@ -29,13 +31,32 @@
 		function checkDate()
 		{
 			var date=console.log(jsdate.value);
-			document.getElementByID("submit").innerHTML=date;
 		}
 
 		function submit()
 		{
-
+			document.getElementById("playlist").style.display= 'block';	
 		}
+		
+		function displayTimeSlots()
+		{
+			document.getElementById("timeslots").style.display = 'block';
+		}
+		
+		document.querySelector("button").addEventListener("click", about);
+
+		function about()
+		{
+			alert('This page was written by Anudeep');
+		}
+		
+		document.getElementById("information").onsubmit="submitForm()"; 	
+		function submitForm()
+		{
+			document.getElementById("djInfo").innerHTML='Form has been submitted!';
+		}
+		
+		
 	</script>
 
       <div class="calender">
@@ -45,12 +66,13 @@
 
 	  <label for="start">Start date:</label>
 
-          <input type="date" id="jsdate" name="txtdate" >
-	  <input type="button" id="select" onclick="checkDate()" value="Select">
+          <input type="date" id="jsdate" name="txtdate" onchange="displayTimeSlots()">
 	  </form>
-          
       </div>
-        <br>
+      
+  <br>
+
+	<div id="timeslots" style="display: none;">
         <p>Please select your time for the specific day above </p>
        <input type="radio" id="o1" name="timeSlot" value="1">
        <label for="Option 1">9:00 AM - 10:00 AM</label><br>
@@ -59,10 +81,12 @@
        <input type="radio" id="o3" name="timeSlot" value="3">
        <label for="Option 3">4:30 PM - 5:00 PM</label>
       <br><br>  
-      <input type="button" id="submit" onclick="submit()" value="Submit">
-      
+      <input type="button" name="submit" value="Submit" onclick="submit()"/>
+	</div>
+	
+	</br>
 
-      <div class="box5" div class="rectangle">
+      <div id="playlist" style="display:none;" class="box5" class="rectangle"  >
 	 <p><h2>Assigned playlist for time slot selected</h2></p>
        <label for="Song 1">One song</label><br>
 
@@ -70,9 +94,25 @@
 
        <label for="Song 3">Some other song</label><br>
 
-	 <label for="Song 4">How about this song?</label><br>
+       <label for="Song 4">How about this song?</label><br>
 
        <label for="Song 5">Try this one!</label>
       </div>
+
+	<div id="information">
+		<input type="button" name="about" value="About" onclick="about()"/>
+		<h3>Enter DJ information</h3>
+		<form id="djInfo" onsubmit="return submitForm()">
+			 <label for="fname">First name:</label>
+			  <input type="text" id="fname" name="fname" required maxlength="40"><br>
+			  <label for="lname">Last name:</label>
+			  <input type="text" id="lname" name="lname" required minlength="1"><br>
+			<label for="email">Email:</label>
+			<input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
+			<input type="submit" value="Finalize">
+		</form>
+
+	</div>
+
 </body>
 </html>
